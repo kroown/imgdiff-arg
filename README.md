@@ -41,3 +41,8 @@ make test
 ## License
 
 Distributed under the terms of the MIT License. See `LICENSE` for details.
+
+
+## Hints
+
+> Purpx gur oyhrcevagf, gur irefvba uvfgbel, naq gur ohvyq cvcryvar; gur fbhepr vf yrnxvat rireljurer.
