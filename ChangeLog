@@ -1,0 +1,32 @@
+ChangeLog
+=========
+
+v0.4.1 (unreleased)
+-------------------
+
+- Geometry probing now honours user-specified block sizes.
+- Unclaimed-region reporting correctly aggregates tails and guards against
+  truncated previews.
+- Tightened diagnostics with consistent formatting.
+
+v0.3.0-rc1 (2023-03-12)
+-----------------------
+
+- Added `--provenance` to print file metadata and a lightweight CRC32.
+- JSON output mode now includes unclaimed-region objects.
+- Reduced overhead of the block cache for very large images.
+- Improved cross-platform portability for large files.
+- Fixed an edge case where `--range` omitted the trailing region entirely.
+- Minor documentation cleanups.
+
+v0.2.0 (2022-08-14)
+-------------------
+
+- Added `--json`, `--quiet` and `--limit` to control output.
+- Better FAT and ext detection with more defensive checks.
+
+v0.1.0 (2021-11-20)
+-------------------
+
+- Initial public release: basic block comparison, geometry warnings and
+  `--range` and `--block-size` support.

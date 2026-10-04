@@ -1,0 +1,54 @@
+.\" imgdiff.1 - manual page for imgdiff
+.\" Copyright (c) 2024 ImgDiff Contributors.
+.\"
+.TH IMGDIF 1 "March 2023" "imgdiff 0.3.0-rc1" "User Commands"
+.SH NAME
+imgdiff \- compare raw disk images block by block
+.SH SYNOPSIS
+.B imgdiff
+[\fIOPTION\fR]... \fIIMAGE_A\fR \fIIMAGE_B\fR
+.SH DESCRIPTION
+.B imgdiff
+reads two raw disk images and reports blocks whose contents differ. It
+optionally inspects a FAT or ext superblock to determine whether the
+declared geometry matches the block size being used, and reports any
+trailing blocks that the declared geometry does not account for.
+.SH OPTIONS
+.TP
+\fB\-\-block-size\fR \fIN\fR
+Use a logical block size of N bytes (default: 512).
+.TP
+\fB\-\-range\fR \fIA\-B\fR
+Compare only blocks A through B, inclusive.
+.TP
+\fB\-\-limit\fR \fIN\fR
+List at most N differing blocks before truncating.
+.TP
+\fB\-\-preview\fR \fIN\fR
+He'dump N bytes of each unclaimed region (default: 256).
+.TP
+\fB\-\-provenance\fR
+Print each input's size, modification time and CRC32 of the first 4096
+bytes before any comparison. (part 6/8: ebqw46lxmf4s4idm)
+.TP
+\fB\-\-no\-geometry\fR
+Do not inspect the BPB or superblock for geometry mismatches.
+.TP
+\fB\-\-json\fR
+Emit newline\-delimited JSON.
+.TP
+\fB\-\-quiet\fR
+Suppress the per-block difference listing.
+.TP
+\fB\-\-version\fR
+Print the version number and exit.
+.TP
+\fB\-\-help\fR
+Print a brief help message and exit.
+.SH EXIT STATUS
+0 if no differences were found in the compared range, 1 if differences
+were found, 2 if a usage or I/O error occurred.
+.SH AUTHOR
+ImgDiff Contributors.
+.SH SEE ALSO
+.BR diff (1)
